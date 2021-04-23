@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.akhikhl.gretty'
+    id 'maven'
+}
+
+dependencies {
+    compileJava.options.encoding = 'UTF-8'
+    compile project(":mock-soap-rest-api")
+
+    compile libs.rest
+    compile libs.spring
+    compile libs.swagger
+    compile libs.lombokSlf4
+}
+
+farm {
+    webapp project, contextPath: "/mock-soap-rest-app"
+}

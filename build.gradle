@@ -1,0 +1,43 @@
+plugins {
+    id "org.akhikhl.gretty" version "2.0.0"
+}
+
+allprojects {
+    apply plugin: 'java'
+    group 'ru.sbrf.dog900.mocks'
+
+    repositories {
+        mavenCentral()
+    }
+
+}
+
+apply from: 'gradle/dependencies.gradle'
+
+String resolveConfigDir() {
+    def dir = file("$rootDir/etc").path
+
+    if (new File(dir).exists()) {
+        return dir
+    }
+    return null
+}
+
+ext.readConfig = { File configFile ->
+    Properties config = new Properties()
+    configFile.withReader("UTF-8") { reader ->
+        config.load(reader)
+    }
+    println "Load settings from file ['${configFile.absolutePath}']:\n$config\n"
+    return config
+}
+
+ext.configDir = resolveConfigDir()
+
+farms {
+    farm {
+        include ':mock-soap-rest-app'
+    }
+}
+
+apply plugin: 'org.akhikhl.gretty'

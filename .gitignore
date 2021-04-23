@@ -1,0 +1,5 @@
+.idea/
+target/
+.gradle/
+**/build
+mock-soap-rest-app/src/main/webapp/index.html

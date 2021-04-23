@@ -1,0 +1,5 @@
+rootProject.name = 'mock-soap-rest-gradle'
+include 'mock-soap-rest-app'
+include 'mock-soap-rest-client'
+include 'mock-soap-rest-api'
+

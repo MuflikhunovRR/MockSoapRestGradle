@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <m:CountryCurrencyResponse xmlns:m="http://www.oorsprong.org/websamples.countryinfo">
+            <m:CountryCurrencyResult>
+                <m:sISOCode>EUR</m:sISOCode>
+                <m:sName>Euro</m:sName>
+            </m:CountryCurrencyResult>
+        </m:CountryCurrencyResponse>
+    </soap:Body>
+</soap:Envelope>

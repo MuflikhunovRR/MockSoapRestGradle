@@ -1,0 +1,10 @@
+plugins {
+    id 'java'
+    id 'maven'
+}
+
+dependencies {
+    compile project(":mock-soap-rest-api")
+    compile libs.springWeb
+
+}

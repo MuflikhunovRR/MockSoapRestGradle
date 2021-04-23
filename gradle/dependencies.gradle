@@ -1,0 +1,31 @@
+def springVersion = "5.1.7.RELEASE"
+def springWsVersion = "2.4.2.RELEASE"
+def jacksonVersion = "2.9.5"
+def javaxWsVersion = "2.0.1"
+def swaggerVersion = "2.9.2"
+def slf4jVersion = "1.7.30"
+def lombokVersion = "1.16.18"
+
+ext {
+
+    libs = [
+            springWeb      : "org.springframework:spring-web:$springVersion",
+            springWebmvc   : "org.springframework:spring-webmvc:$springVersion",
+            springWsSupport: "org.springframework.ws:spring-ws-support:$springWsVersion",
+
+            javaxRsApi     : "javax.ws.rs:javax.ws.rs-api:$javaxWsVersion",
+            jackson        : "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+
+            springfoxS     : "io.springfox:springfox-swagger2:$swaggerVersion",
+            springfoxUi    : "io.springfox:springfox-swagger-ui:$swaggerVersion",
+
+            slf4           : "org.slf4j:slf4j-log4j12:$slf4jVersion",
+            lombok         : "org.projectlombok:lombok:$lombokVersion"
+    ]
+
+    libs.spring = [libs.springWeb, libs.springWebmvc, libs.springWsSupport]
+    libs.rest = [libs.javaxRsApi, libs.jackson]
+    libs.swagger = [libs.springfoxS, libs.springfoxUi]
+    libs.lombokSlf4 = [libs.slf4, libs.lombok]
+
+}
